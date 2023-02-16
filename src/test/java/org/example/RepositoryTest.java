@@ -40,7 +40,7 @@ class RepositoryTest {
     }
 
     @Test
-    public void testDeleteByIdrtw() {
+    public void testAddFidAll() {
         Repository repository = new Repository();
 
         Product product1 = new Product(1, "iPhone", 900);

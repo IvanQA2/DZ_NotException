@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.example.RepositoryTest" time="0.069" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.example.RepositoryTest" time="0.085" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/Users/ivans/Library/Java/JavaVirtualMachines/corretto-11.0.17/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/ivans/Docs/Java/DZ_Inheritance/target/surefire/surefirebooter10615931662766970133.jar /Users/ivans/Docs/Java/DZ_Inheritance/target/surefire 2023-02-15T23-08-37_727-jvmRun1 surefire2417491438976496294tmp surefire_016594523504390754609tmp"/>
+    <property name="sun.java.command" value="/Users/ivans/Docs/Java/DZ_Inheritance/target/surefire/surefirebooter2049914088030002447.jar /Users/ivans/Docs/Java/DZ_Inheritance/target/surefire 2023-02-16T20-36-30_344-jvmRun1 surefire12198562498643827477tmp surefire_017717715604999254813tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/ivans/Docs/Java/DZ_Inheritance/target/test-classes:/Users/ivans/Docs/Java/DZ_Inheritance/target/classes:/Users/ivans/.m2/repository/org/junit/jupiter/junit-jupiter/5.9.0/junit-jupiter-5.9.0.jar:/Users/ivans/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.0/junit-jupiter-api-5.9.0.jar:/Users/ivans/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ivans/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/Users/ivans/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ivans/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.0/junit-jupiter-params-5.9.0.jar:/Users/ivans/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.0/junit-jupiter-engine-5.9.0.jar:/Users/ivans/.m2/repository/org/junit/platform/junit-platform-engine/1.9.0/junit-platform-engine-1.9.0.jar:"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/ivans/Docs/Java/DZ_Inheritance/target/surefire/surefirebooter10615931662766970133.jar"/>
+    <property name="surefire.real.class.path" value="/Users/ivans/Docs/Java/DZ_Inheritance/target/surefire/surefirebooter2049914088030002447.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.17+8-LTS"/>
@@ -62,9 +62,9 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testDeleteByIdrtwq" classname="org.example.RepositoryTest" time="0.041"/>
-  <testcase name="testAdd" classname="org.example.RepositoryTest" time="0"/>
-  <testcase name="testFindAll1" classname="org.example.RepositoryTest" time="0.002"/>
-  <testcase name="testDeleteById" classname="org.example.RepositoryTest" time="0"/>
+  <testcase name="testDeleteByIdrtwq" classname="org.example.RepositoryTest" time="0.042"/>
+  <testcase name="testAdd" classname="org.example.RepositoryTest" time="0.001"/>
+  <testcase name="testFindAll1" classname="org.example.RepositoryTest" time="0.006"/>
+  <testcase name="testDeleteById" classname="org.example.RepositoryTest" time="0.001"/>
   <testcase name="testDeleteByIdrtw" classname="org.example.RepositoryTest" time="0.001"/>
 </testsuite>

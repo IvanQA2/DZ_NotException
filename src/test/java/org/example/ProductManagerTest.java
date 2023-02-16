@@ -67,8 +67,8 @@ class ProductManagerTest {
         Repository repository = new Repository();
         ProductManager productManager = new ProductManager(repository);
 
-        Product product1 = new Product(1234, "iPhone", 999);
-        Product product2 = new Product(5678, "iPad", 799);
+        Product product1 = new Product(1, "iPhone", 999);
+        Product product2 = new Product(2, "iPad", 799);
 
         repository.add(product1);
         repository.add(product2);
@@ -77,25 +77,9 @@ class ProductManagerTest {
         assertEquals(1, result.length);
         assertEquals(product1, result[0]);
     }
-
+    
     @Test
-    public void testSearchByTextq() {
-        Repository repository = new Repository();
-        ProductManager productManager = new ProductManager(repository);
-
-        Product product1 = new Product(1234, "iPhone", 999);
-        Product product2 = new Product(5678, "iPad", 799);
-
-        repository.add(product1);
-        repository.add(product2);
-
-        Product[] result = productManager.searchBy("iMac");
-        assertEquals(0, result.length);
-
-    }
-
-    @Test
-    public void testSearchByTextqq() {
+    public void testSearchByEmptyRepository() {
         Repository repository = new Repository();
         ProductManager productManager = new ProductManager(repository);
 
@@ -105,7 +89,7 @@ class ProductManagerTest {
     }
 
     @Test
-    public void testSearchByTextqqq() {
+    public void testSearchsWithWrongTextQuery() {
         Repository repository = new Repository();
         ProductManager productManager = new ProductManager(repository);
 
@@ -122,11 +106,9 @@ class ProductManagerTest {
 
     @Test
     public void testSearchBy() {
-        // create a repository
         Repository repository = new Repository();
         ProductManager manager = new ProductManager(repository);
 
-        // add some products
         Product product1 = new Product(1, "Product 1", 10);
         Product product2 = new Product(2, "Product 2", 20);
         Product product3 = new Product(3, "Product 3", 30);
@@ -134,14 +116,10 @@ class ProductManagerTest {
         manager.add(product2);
         manager.add(product3);
 
-        // search for products
         Product[] searchResult = manager.searchBy("duct");
 
-        // verify that the search result contains the expected products
         assertEquals(3, searchResult.length);
         assertTrue(Arrays.asList(searchResult).contains(product1));
         assertTrue(Arrays.asList(searchResult).contains(product2));
     }
-
-
 }
