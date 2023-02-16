@@ -13,9 +13,9 @@ class ProductManagerTest {
         Repository repository = new Repository();
         ProductManager productManager = new ProductManager(repository);
 
-        Book book1 = new Book(1,"book1", 200, "autor1");
-        Book book2 = new Book(2,"book2", 240, "autor2");
-        Book book3 = new Book(3,"book3", 290, "autor3");
+        Book book1 = new Book(1, "book1", 200, "autor1");
+        Book book2 = new Book(2, "book2", 240, "autor2");
+        Book book3 = new Book(3, "book3", 290, "autor3");
 
         ProductManager.add(book1);
         ProductManager.add(book2);
@@ -24,17 +24,18 @@ class ProductManagerTest {
         Product[] expected = {book1, book2, book3};
         Product[] actual = repository.findAll();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void testSearch() {
         Repository repository = new Repository();
         ProductManager productManager = new ProductManager(repository);
 
-        Book book1 = new Book(1,"book1", 200, "autor1");
-        Book book2 = new Book(2,"book2", 240, "autor2");
-        Book book3 = new Book(3,"book3", 290, "autor3");
+        Book book1 = new Book(1, "book1", 200, "autor1");
+        Book book2 = new Book(2, "book2", 240, "autor2");
+        Book book3 = new Book(3, "book3", 290, "autor3");
 
         ProductManager.add(book1);
         ProductManager.add(book2);
@@ -43,9 +44,10 @@ class ProductManagerTest {
         Product[] expected = {book2};
         Product[] actual = productManager.searchBy("book2");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void testAddProduct() {
         Repository repository = new Repository();
@@ -91,6 +93,7 @@ class ProductManagerTest {
         assertEquals(0, result.length);
 
     }
+
     @Test
     public void testSearchByTextqq() {
         Repository repository = new Repository();
@@ -100,6 +103,7 @@ class ProductManagerTest {
         assertEquals(0, result.length);
 
     }
+
     @Test
     public void testSearchByTextqqq() {
         Repository repository = new Repository();
@@ -115,6 +119,7 @@ class ProductManagerTest {
         assertEquals(0, result.length);
 
     }
+
     @Test
     public void testSearchBy() {
         // create a repository
@@ -123,8 +128,8 @@ class ProductManagerTest {
 
         // add some products
         Product product1 = new Product(1, "Product 1", 10);
-        Product product2 = new Product(2, "Product 2",  20);
-        Product product3 = new Product(3, "Product 3",  30);
+        Product product2 = new Product(2, "Product 2", 20);
+        Product product3 = new Product(3, "Product 3", 30);
         manager.add(product1);
         manager.add(product2);
         manager.add(product3);

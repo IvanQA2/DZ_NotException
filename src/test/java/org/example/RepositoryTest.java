@@ -27,14 +27,15 @@ class RepositoryTest {
         assertEquals(1, result.length);
         assertEquals(product2, result[0]);
     }
+
     @Test
     void testFindAll1() {
         Repository repository = new Repository();
-        Product p1 = new Product(1, "Product 1", 10);
-        Product p2 = new Product(2, "Product 2", 20);
-        repository.add(p1);
-        repository.add(p2);
-        Product[] expected = new Product[]{p1, p2};
+        Product product1 = new Product(1, "Product 1", 10);
+        Product product2 = new Product(2, "Product 2", 20);
+        repository.add(product1);
+        repository.add(product2);
+        Product[] expected = new Product[]{product1, product2};
         assertArrayEquals(expected, repository.findAll());
     }
 
@@ -54,6 +55,7 @@ class RepositoryTest {
         assertEquals(product2, result[1]);
 
     }
+
     @Test
     public void testDeleteByIdrtwq() {
         Repository repository = new Repository();
