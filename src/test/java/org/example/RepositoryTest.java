@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,9 +11,10 @@ class RepositoryTest {
         Repository repository = new Repository();
         Product product = new Product(1, "product", 10);
         repository.add(product);
+        Product[] expected = { product };
         Product[] result = repository.findAll();
         assertEquals(1, result.length);
-        assertEquals(product, result[0]);
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
@@ -22,10 +24,12 @@ class RepositoryTest {
         Product product2 = new Product(2, "product2", 20);
         repository.add(product1);
         repository.add(product2);
+        Product[] expected = { product2 };
+
         repository.deleteById(1);
         Product[] result = repository.findAll();
         assertEquals(1, result.length);
-        assertEquals(product2, result[0]);
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
@@ -36,7 +40,7 @@ class RepositoryTest {
         repository.add(product1);
         repository.add(product2);
         Product[] expected = new Product[]{product1, product2};
-        assertArrayEquals(expected, repository.findAll());
+        Assertions.assertArrayEquals(expected, repository.findAll());
     }
 
     @Test
@@ -65,12 +69,13 @@ class RepositoryTest {
 
         repository.add(product1);
         repository.add(product2);
+        Product[] expected = { product2 };
 
         repository.deleteById(1);
 
         Product[] result = repository.findAll();
         assertEquals(1, result.length);
-        assertEquals(product2, result[0]);
+        Assertions.assertArrayEquals(expected, result);
 
     }
 }

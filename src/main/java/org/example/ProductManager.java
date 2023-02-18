@@ -1,13 +1,13 @@
 package org.example;
 
 public class ProductManager {
-    private static Repository repository;
+    private Repository repository;
 
     public ProductManager(Repository repository) {
         this.repository = repository;
     }
 
-    public static void add(Product product) {
+    public void add(Product product) {
         repository.add(product);
     }
 

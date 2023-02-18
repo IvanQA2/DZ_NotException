@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+//import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
     @Test
@@ -17,9 +20,9 @@ class ProductManagerTest {
         Book book2 = new Book(2, "book2", 240, "autor2");
         Book book3 = new Book(3, "book3", 290, "autor3");
 
-        ProductManager.add(book1);
-        ProductManager.add(book2);
-        ProductManager.add(book3);
+        productManager.add(book1);
+        productManager.add(book2);
+        productManager.add(book3);
 
         Product[] expected = {book1, book2, book3};
         Product[] actual = repository.findAll();
@@ -37,13 +40,12 @@ class ProductManagerTest {
         Book book2 = new Book(2, "book2", 240, "autor2");
         Book book3 = new Book(3, "book3", 290, "autor3");
 
-        ProductManager.add(book1);
-        ProductManager.add(book2);
-        ProductManager.add(book3);
+        productManager.add(book1);
+        productManager.add(book2);
+        productManager.add(book3);
 
         Product[] expected = {book2};
         Product[] actual = productManager.searchBy("book2");
-
         Assertions.assertArrayEquals(expected, actual);
 
     }
@@ -55,11 +57,11 @@ class ProductManagerTest {
 
         Product product = new Product(1234, "iPhone", 999);
         productManager.add(product);
+        Product[] expected = {product};
 
         Product[] result = repository.findAll();
         assertEquals(1, result.length);
-        assertEquals(product, result[0]);
-
+        Assertions.assertArrayEquals(expected, result);
     }
 
     @Test
@@ -72,10 +74,11 @@ class ProductManagerTest {
 
         repository.add(product1);
         repository.add(product2);
+        Product[] expected = {product1};
 
         Product[] result = productManager.searchBy("iPhone");
         assertEquals(1, result.length);
-        assertEquals(product1, result[0]);
+        Assertions.assertArrayEquals(expected, result);
     }
     
     @Test
