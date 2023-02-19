@@ -88,7 +88,7 @@ class RepositoryTest {
         repository.add(product2);
 
         Assertions.assertThrows(NotFoundException.class,
-                () -> repository.deleteById(1));
+                () -> repository.deleteById(3));
     }
 
     @Test
