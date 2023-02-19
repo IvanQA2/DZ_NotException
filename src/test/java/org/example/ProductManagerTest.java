@@ -80,7 +80,7 @@ class ProductManagerTest {
         assertEquals(1, result.length);
         Assertions.assertArrayEquals(expected, result);
     }
-    
+
     @Test
     public void testSearchByEmptyRepository() {
         Repository repository = new Repository();

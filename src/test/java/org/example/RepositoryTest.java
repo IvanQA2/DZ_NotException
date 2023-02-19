@@ -11,7 +11,7 @@ class RepositoryTest {
         Repository repository = new Repository();
         Product product = new Product(1, "product", 10);
         repository.add(product);
-        Product[] expected = { product };
+        Product[] expected = {product};
         Product[] result = repository.findAll();
         assertEquals(1, result.length);
         Assertions.assertArrayEquals(expected, result);
@@ -24,7 +24,7 @@ class RepositoryTest {
         Product product2 = new Product(2, "product2", 20);
         repository.add(product1);
         repository.add(product2);
-        Product[] expected = { product2 };
+        Product[] expected = {product2};
 
         repository.deleteById(1);
         Product[] result = repository.findAll();
@@ -69,7 +69,7 @@ class RepositoryTest {
 
         repository.add(product1);
         repository.add(product2);
-        Product[] expected = { product2 };
+        Product[] expected = {product2};
 
         repository.deleteById(1);
 
@@ -77,5 +77,37 @@ class RepositoryTest {
         assertEquals(1, result.length);
         Assertions.assertArrayEquals(expected, result);
 
+    }
+
+    @Test
+    public void testNotFoundException() {
+        Repository repository = new Repository();
+        Product product1 = new Product(1, "product1", 10);
+        Product product2 = new Product(2, "product2", 20);
+        repository.add(product1);
+        repository.add(product2);
+
+        Assertions.assertThrows(NotFoundException.class,
+                () -> repository.deleteById(1));
+    }
+
+    @Test
+    public void testNotFoundException_Type() {
+        int id = 123;
+
+        assertThrows(NotFoundException.class, () -> {
+            throw new NotFoundException(id);
+        });
+    }
+
+    @Test
+    public void testNotFoundException_Message() {
+        int id = 123;
+
+        // Act
+        NotFoundException exception = new NotFoundException(id);
+
+        // Assert
+        assertEquals("Товар id 123 не найден", exception.getMessage());
     }
 }
